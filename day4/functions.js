@@ -143,3 +143,90 @@ var list=['mom',"wow",'noon','god','121'];
 
 })();
 
+//F.Return median of two sorted arrays of the same size.
+//using anonymous function
+
+var median=function(arr1,arr2,n){
+ 
+ 
+ let comb=(arr1.concat(arr2)).sort((a,b)=>a-b);
+ 
+ let ans=(comb[n-1]+comb[n])/2;
+ 
+ return ans;
+
+}
+let arr1=[1,12,15,26,38];
+let arr2=[2,13,17,30,45]
+let n=arr1.length;
+console.log(median(arr1,arr2,n));
+
+//F.Return median of two sorted arrays of the same size.
+//using IIFE function
+(function(){
+    let comb=(arr1.concat(arr2)).sort((a,b)=>a-b);
+ 
+ let ans=(comb[n-1]+comb[n])/2;
+ 
+ return console.log(ans);
+
+})();
+
+//G.remove duplicates from array
+//using anonymous function
+
+var dup=function(values){
+let ans=[];
+for(let i=0;i<values.length;i++){
+    if(!values.slice(i+1).includes(values[i])){
+             ans.push(values[i]);
+    }
+}
+return ans;
+
+}
+let duplicates=[1,1,1,2,3,4,5,6,8,9,0,"hello","hello"];
+console.log(dup(duplicates));
+
+//G.remove duplicates from array
+//using IIFE function
+(function(){
+    let ans=[];
+for(let i=0;i<duplicates.length;i++){
+    if(!duplicates.slice(i+1).includes(duplicates[i])){
+             ans.push(duplicates[i]);
+    }
+}
+return console.log(ans);
+
+
+})();
+
+//H.Rotate an array by k times
+//using anonymous function
+var rotate=function(rarray,k){
+    
+    for(let i=rarray.length-k;i<rarray.length;i++){
+        let r=rarray.pop();
+        rarray.unshift(r)
+    }
+    return rarray
+}
+var rarray=[1,2,3,4,5];
+var k=1;
+console.log(rotate(rarray,k));
+
+//H.Rotate an array by k times
+//using IIFE function
+(function (){
+    var rarray=[1,2,3,4,5];
+     var k=2;
+    
+     for(let i=rarray.length-k;i<rarray.length;i++){
+        let r=rarray.pop();
+        rarray.unshift(r);
+    }
+    return console.log(rarray);
+}
+
+)();
